@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.2/echarts.common.js"></script>
+  </head>
+  <style>
+    button {
+      background: #f4f6f8;
+      width: 80px;
+      height: 30px;
+      border-radius: 30px;
+      margin-top: 10px;
+      float: right;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: #578ef7;
+      width: 80px;
+      height: 30px;
+      border-radius: 30px;
+      color: #fff;
+      float: right;
+      margin-right: 10px;
+    }
+    .box {
+      width: 1000px;
+      height: 640px;
+
+      margin: auto;
+    }
+    .haona {
+      width: 300px;
+      height: 640px;
+      float: left;
+    }
+    .akkl {
+      width: 200px;
+      height: 140px;
+      background: #f8f9fe;
+      text-align: center;
+      padding-top: 10px;
+      margin-top: 100px;
+      margin-left: 50px;
+    }
+  </style>
+  <body>
+    <body>
+      <div
+        style="
+          width: 1000px;
+          height: 60px;
+          background: #f3f5fe;
+          margin: auto;
+          margin-top: 20px;
+        "
+      >
+        <button onclick="a4()">近30日</button>
+        <button onclick="a3()">近7日</button>
+        <button onclick="a2()">昨天</button>
+        <button onclick="a1()">今天</button>
+      </div>
+
+      <div class="box">
+
+        <div id="asbd"> 
+          <div class="haona">
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #4f90f6;position:absolute 
+              ;top: 207px;left: 292px;"></div>
+              <p>PV(总浏览量)</p>
+              <h3>195</h3>
+            </div>
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #7dbd3e;position:absolute 
+              ;top: 457px;left: 292px;"></div>
+              <p>UV(总访问量)</p>
+              <h3>0</h3>
+            </div>
+          </div>
+          <div id="main" style="width: 650px; height: 600px; float: left"></div>
+        </div>
+
+
+        
+        <div id="bd"> 
+          <div class="haona">
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #4f90f6;position:absolute 
+              ;top: 207px;left: 292px;"></div>
+              <p>PV(总浏览量)</p>
+              <h3>305</h3>
+            </div>
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #7dbd3e;position:absolute 
+              ;top: 457px;left: 292px;"></div>
+              <p>UV(总访问量)</p>
+              <h3>0</h3>
+            </div>
+          </div>
+          <div id="mainw" style="width: 650px; height: 600px; float: left"></div>
+        </div>
+
+
+
+        
+        <div id="asb"> 
+          <div class="haona">
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #4f90f6;position:absolute 
+              ;top: 207px;left: 292px;"></div>
+              <p>PV(总浏览量)</p>
+              <h3>2170</h3>
+            </div>
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #7dbd3e;position:absolute 
+              ;top: 457px;left: 292px;"></div>
+              <p>UV(总访问量)</p>
+              <h3>118</h3>
+            </div>
+          </div>
+          <div id="maine" style="width: 650px; height: 600px; float: left"></div>
+        </div>
+
+
+
+
+        
+        <div id="asdq"> 
+          <div class="haona">
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #4f90f6;position:absolute 
+              ;top: 207px;left: 292px;"></div>
+              <p>PV(总浏览量)</p>
+              <h3>202302</h3>
+            </div>
+            <div class="akkl">
+              <div style="width: 20px;height: 20px;background: #7dbd3e;position:absolute 
+              ;top: 457px;left: 292px;"></div>
+              <p>UV(总访问量)</p>
+              <h3>1056</h3>
+            </div>
+          </div>
+          <div id="mainr" style="width: 650px; height: 600px; float: left"></div>
+        </div>
+
+<!-- 
+        <div id="mainw" style="width: 650px; height: 600px; float: left"></div>
+        <div id="maine" style="width: 650px; height: 600px; float: left"></div>
+        <div id="mainr" style="width: 650px; height: 600px; float: left"></div> -->
+      </div>
+    </body>
+  </body>
+  <script>
+    (function () {
+      a1();
+    })();
+    function a2() {
+      $("#asb").css("display", "none");
+      $("#asdq").css("display", "none");
+      $("#asbd").css("display", "none");
+      $("#bd").css("display", "block");
+      var chartDom = document.getElementById("mainw");
+      var myChart = echarts.init(chartDom);
+      var option;
+      const data = [
+        ["00-00", 0],
+        ["2-00", 0],
+        ["4-00", 10],
+        ["06-00", 20],
+        ["08-00", 25],
+        ["10-00", 30],
+        ["12-00", 45],
+        ["14-00", 40],
+        ["16-00", 13],
+        ["18-00", 0],
+        ["20-00", 10],
+        ["22-00", 0],
+      ];
+      const dateList = data.map(function (item) {
+        return item[0];
+      });
+      const valueList = data.map(function (item) {
+        return item[1];
+      });
+      option = {
+        color: ["#94bdf9"],
+        // Make gradient line here
+        visualMap: [
+          {
+            show: false,
+            type: "continuous",
+            seriesIndex: 0,
+            min: 0,
+            max: 400,
+          },
+        ],
+        title: [
+          {
+            left: "center",
+            text: "",
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
+        xAxis: [
+          {
+            data: dateList,
+          },
+        ],
+        yAxis: [{}],
+        series: [
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList,
+          },
+        ],
+      };
+      option && myChart.setOption(option);
+    }
+
+    function a1() {
+      $("#asb").css("display", "none");
+      $("#asdq").css("display", "none");
+      $("#bd").css("display", "none");
+      $("#asbd").css("display", "block");
+
+      var chartDom = document.getElementById("main");
+      var myChart = echarts.init(chartDom);
+      var option;
+      const data = [
+        ["00-00", 0],
+        ["2-00", 100],
+        ["4-00", 40],
+        ["06-00", 17],
+        ["08-00", 80],
+        ["10-00", 0],
+        ["12-00", 15],
+        ["14-00", 91],
+        ["16-00", 13],
+        ["18-00", 40],
+        ["20-00", 10],
+        ["22-00", 0],
+      ];
+      const dateList = data.map(function (item) {
+        return item[0];
+      });
+      const valueList = data.map(function (item) {
+        return item[1];
+      });
+      option = {
+        color: ["#94bdf9"],
+        // Make gradient line here
+        visualMap: [
+          {
+            show: false,
+            type: "continuous",
+            seriesIndex: 0,
+            min: 0,
+            max: 400,
+          },
+        ],
+        title: [
+          {
+            left: "center",
+            text: "",
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
+        xAxis: [
+          {
+            data: dateList,
+          },
+        ],
+        yAxis: [{}],
+        series: [
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList,
+          },
+        ],
+      };
+      option && myChart.setOption(option);
+    }
+
+    function a3() {
+      $("#asbd").css("display", "none");
+      $("#asdq").css("display", "none");
+      $("#bd").css("display", "none");
+      $("#asb").css("display", "block");
+
+      var chartDom = document.getElementById("maine");
+      var myChart = echarts.init(chartDom);
+      var option;
+      const data = [
+        ["2023-04-30", 280, 6],
+        ["2023-05-01", 260, 5],
+        ["2023-05-02", 250, 4],
+        ["2023-05-03", 240, 4],
+        ["2023-05-04", 590, 4],
+        ["2023-05-05", 700, 4],
+        ["2023-05-06", 590, 8],
+        ["2023-05-07", 240, 8],
+        ["2023-05-04", 280, 8],
+      ];
+      const dateList = data.map(function (item) {
+        return item[0];
+      });
+      const valueList = data.map(function (item) {
+        return item[1];
+      });
+      const valueList2 = data.map(function (item) {
+        return item[2];
+      });
+      option = {
+        color: ["#94bdf9", "#7dbd3f"],
+        // Make gradient line here
+        visualMap: [
+          {
+            show: false,
+            type: "continuous",
+            seriesIndex: 0,
+            min: 0,
+            max: 400,
+          },
+        ],
+        title: [
+          {
+            left: "center",
+            text: "",
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
+        xAxis: [
+          {
+            data: dateList,
+          },
+        ],
+        yAxis: [{}],
+        series: [
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList,
+          },
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList2,
+          },
+        ],
+      };
+      option && myChart.setOption(option);
+    }
+    function a4() {
+      $("#asb").css("display", "none");
+      $("#bb").css("display", "none");
+      $("#asbd").css("display", "none");
+      $("#asdq").css("display", "block");
+      var chartDom = document.getElementById("mainr");
+      var myChart = echarts.init(chartDom);
+      var option;
+      const data = [
+        ["2023-04-07", 940, 6],
+        ["2023-04-11", 860, 5],
+        ["2023-04-15", 3450, 400],
+        ["2023-04-19", 940, 400],
+        ["2023-04-23", 590, 4],
+        ["2023-04-27", 4000, 4],
+        ["2023-05-01", 940, 8],
+        ["2023-05-05", 880, 8],
+      ];
+      const dateList = data.map(function (item) {
+        return item[0];
+      });
+      const valueList = data.map(function (item) {
+        return item[1];
+      });
+      const valueList2 = data.map(function (item) {
+        return item[2];
+      });
+      option = {
+        color: ["#94bdf9", "#7dbd3f"],
+        visualMap: [
+          {
+            show: false,
+            type: "continuous",
+            seriesIndex: 0,
+            min: 0,
+            max: 400,
+          },
+        ],
+  
+        title: [
+          {
+            left: "center",
+            text: "",
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
+        xAxis: [
+          {
+            data: dateList,
+          },
+        ],
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: (value, index) => {
+                return `${value / 1000}k`;
+              },
+            },
+          },
+        ],
+        series: [
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList,
+          },
+          {
+            type: "line",
+            showSymbol: false,
+            data: valueList2,
+          },
+        ],
+      };
+      option && myChart.setOption(option);
+    }
+  </script>
+</html>
