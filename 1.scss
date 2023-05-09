@@ -1,0 +1,149 @@
+/* 定义变量与值 */
+ $bgcolor: lightblue;
+ $textcolor: red;
+$fontsize: 18px;
+ $mysmallsize: 12px;
+
+/* 使用变量 */
+// body {
+//   background-color: $bgcolor;
+//   color: $textcolor;
+//   font-size: $fontsize;
+// }
+// p{
+//   font-size: $mysmallsize;
+// }
+// h1{
+//   color: $textcolor;
+
+// }
+// b{
+//     color: blue;
+// }
+body,div,ul,ol,dt,dd,dl,li,h1,h2,h3,h4,h5,h6,form,input,select,textarea,p,img,a,span,strong,*{ padding:0; margin:0;}
+body{ font-size:12px; font-family:"宋体"; color:#000000; background-color:#FFFFFF;}
+ul,ol,li{ list-style:none;}
+img,input,select,textarea{ vertical-align:middle}
+img{ border:none;}
+a{ color:#333333; text-decoration:none;}
+a:hover{ color:#003366;}
+.clear{ clear:both; height:0; width:0; overflow:hidden;} 
+ul li{
+  float: left;
+  display: flex;
+  justify-content:center;
+  list-style: none;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+ul li a:hover{
+
+  display: flex;
+  justify-content:center;
+  list-style: none;
+  color: #18AE66;
+border-bottom: solid #18AE66 10px;
+
+}
+.akkj{
+  line-height: 40px;
+  font-size: 20px;
+}
+.alop{
+  margin-top: -25px;
+}
+#box{
+  width: 1200px;
+  height: 80px;
+  margin: auto;
+  background: navajowhite;
+}
+.rte{
+  float:right ;
+  margin-right: 40px;
+}
+#box2{width: 1200px;
+  height: 440px;
+  margin: auto;
+}
+#imgs{
+ width: 1200px;
+ margin: auto;
+}
+#box3{
+  width: 1200px;
+  height: 1500px;
+  margin: auto;
+}
+#box4{
+  width: 500px;
+  height: 300px;
+  float: left;
+}
+#box5{
+  width: 600px;
+  height: 300px;
+  float: left;
+  margin-left: 80px;
+}
+#box6{
+  width: 500px;
+  height: 300px;
+  float: left;
+margin-top: 80px;
+}
+#box7{
+  width: 600px;
+  height: 300px;
+margin-top: 100px;
+margin-left: 80px;
+float: left;
+}
+#box8{
+  width: 700px;
+  height: 600px;
+float: left;
+margin-top: 100px;
+}
+#box9{
+  width: 400px;
+  height: 600px;
+float: left;
+margin-left: 80px;
+margin-top: 120px;
+}
+.shako{
+  width: 500px;
+  border-bottom:solid 1px forestgreen ;
+  height: 50px;
+}
+.shakow{
+  width: 700px;
+  border-bottom:solid 1px forestgreen ;
+  height: 50px;
+  margin-top: 72px;
+  // background:yellow ;
+}
+.shakoew{
+  width: 400px;
+  border-bottom:solid 1px forestgreen ;
+  height: 50px;
+  margin-top: 50px;
+  // background:yellow ;
+}
+.span{
+line-height: 50px;
+  padding-left: 120px;
+  color: #18AE66;
+}
+#btn{
+  color: #FFFFFF;
+  background:#18AE66 ;
+  width: 320px;
+  height: 80px;
+border: none;
+font-size: 20px;
+  margin-top: 10px;
+}
+b{line-height: 30px;}
