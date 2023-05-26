@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/layui@2.7.6/dist/css/layui.css"
+    />
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <!-- <script src="./1.js"></script> -->
+    <script src="https://www.makeapie.cn/dep/echarts/map/js/china.js"></script>
+    <!-- 引入 layui.js -->
+    <script src="https://unpkg.com/layui@2.7.6/dist/layui.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.js"></script>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.js"></script>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="./1.css" />
+
+  <body>
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <div class="layui-logo layui-hide-xs layui-bg-black">
+          <img
+            src="http://101.34.139.112/static/img/logo.67745850.png"
+            width="20px"
+            alt=""
+          />MyAdmin&emsp; &emsp;&emsp;
+        </div>
+        <!-- 添加 -->
+
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+            <a href="#" style="margin-top: -20px">
+              <i class="layui-icon">&#xe66f;</i>
+              登入
+            </a>
+            <dl class="layui-nav-child">
+              <dd id="kkop"><a href="#"><i class="layui-icon">&#xe682;</i>  退出登入</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+            <a href="#">
+              <i class="layui-icon layui-icon-more-vertical"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <div class="layui-anim" data-anim="layui-anim-rotate layui-anim-loop">
+            <img
+              id="imgo"
+              class="layui-anim layui-anim-rotate"
+              data-anim="layui-anim-rotate"
+              src="./imgs/a91d9bc53db67789ddb976e605b5dec.jpg"
+              alt=""
+            />
+          </div>
+          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+              <a class="sou" href="#"><i class="layui-icon">&#xe68e;</i>  首页</a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="#" class="lie"><i class="layui-icon">&#xe63c;</i> 系统管理</a>
+            </li>
+            <li class="layui-nav-item"><a class="le" href="#"> <i class="layui-icon">&#xe665;</i> 服务监控</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div id="div1">
+          <div onclick="funop()" class="divRer">
+            <img
+              src="./imgs/3da31d75281e88fa70ba83daa181309.png"
+              width="80px"
+              style="margin-top: 10px; margin-left: 20px"
+              alt=""
+            />
+            <span
+              style="
+                float: right;
+                line-height: 30px;
+                padding-top: 20px;
+                padding-right: 60px;
+              "
+              ><h3>用户登录量</h3>
+              <h4>70</h4>
+            </span>
+          </div>
+          <div onclick="funoz()" class="divRer">
+            <img
+              src="./imgs/720695f7c02877b309e55310a6dc87a.png"
+              width="80px"
+              style="margin-top: 10px; margin-left: 20px"
+              alt=""
+            />
+            <span
+              style="
+                float: right;
+                line-height: 30px;
+                padding-top: 20px;
+                padding-right: 60px;
+              "
+              ><h3>接口请求量</h3>
+              <h4>13</h4>
+            </span>
+          </div>
+          <div onclick="funos()" class="divRer">
+            <img
+              src="./imgs/bf7f5bde60afbb7e6830596defb10ea.png"
+              width="80px"
+              style="margin-top: 10px; margin-left: 20px"
+              alt=""
+            />
+            <span
+              style="
+                float: right;
+                line-height: 30px;
+                padding-top: 20px;
+                padding-right: 60px;
+              "
+              ><h3>用户登录量</h3>
+              <h4>3</h4>
+            </span>
+
+            <div
+              id="main6"
+              style="
+                width: 1000px;
+                height: 460px;
+                background: #fff;
+                margin-left: -232%;
+                margin-top: 10%;
+              "
+            ></div>
+
+            <div
+              id="main1"
+              style="
+                width: 1000px;
+                height: 460px;
+                background: #fff;
+                margin-left: -232%;
+                margin-top: 10%;
+              "
+            ></div>
+
+            <div
+              id="main2"
+              style="
+                width: 1000px;
+                height: 460px;
+                background: #fff;
+                margin-left: -232%;
+                margin-top: 10%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="layui-form-item" id="div2">
+          <br />
+          &emsp; &emsp; &emsp; &emsp;&emsp;
+          <input
+            type="text"
+            id="op"
+            placeholder="请输入姓名进行搜索"
+          />&emsp;<button
+            class="layui-btn layui-btn-radius layui-btn-warm"
+            id="son"
+          ><i class="layui-icon">&#xe615;</i>
+            </button
+          ><br /><br /><br />
+          &emsp; &emsp; &emsp; &emsp; 姓名&emsp;<input type="text" id="sex" />
+          &emsp;电话 &emsp;<input type="text" id="sexs" /> &emsp;邮箱
+          &emsp;<input type="text" id="sexss" /> &emsp;
+          <button id="btnT" type="button" class="layui-btn layui-btn-sm">
+            添加
+          </button>
+
+          <table
+            border="2"
+            style="width: 100%; margin: 0 auto; border: none; margin-top: 10%"
+          >
+            <thead>
+              <tr style="background: azure; border: none">
+           
+                <th style="width: 40px
+                ;">id</th>
+                <th style="width:50px
+                ;">#</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th style="width: 60px
+                ;">状态</th>
+                <th>更新时间</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="tbo" style="border: none"></tbody>
+          </table>
+          <div id="sop">
+            <h3 style="text-align: center; color: green">个人信息</h3>
+            <br />
+            &emsp; 姓名：
+            <input
+              type="text"
+              placeholder="请输入姓名"
+              id="urame"
+            /><br /><br />
+            &emsp; 电话 : <input type="text" id="igs" /><br /><br />
+            &emsp;邮箱： <input type="text" id="ssss" /><br /><br />
+            &emsp;时间 : <input type="text" id="klop" /><br /><br />
+
+            <button
+              onclick="funyu()"
+              style="float: right; background: green"
+              class="layui-btn layui-btn-radius layui-btn-normal"
+            >
+              关闭
+            </button>
+          </div>
+        </div>
+        <div id="div3">
+          <div style="height: 350px; background: #fff; line-height: 50px">
+            <h2 style="padding-top: 20px; margin-left: 40px">服务器信息</h2>
+            <hr border="1" />
+            <p>
+              &emsp; &emsp; &emsp;<span
+                >系统名称 GNU/Linux CentOS Linux 7.5.1804 (Core) build
+                3.10.0-1127.19.1.el7.x86_64</span
+              >
+              &emsp; &emsp; &emsp;&emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp;
+              &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+              <span>系统架构 amd64 </span>
+            </p>
+            <hr border="1" />
+            <p>
+              &emsp; &emsp; &emsp;<span>java版本 1.8.0_171</span> &emsp; &emsp;
+              &emsp;&emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;
+              &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp;
+              &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp;
+              &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;
+              <span> jvm名称 Java HotSpot(TM) 64-Bit Server VM </span>
+            </p>
+            <hr border="1" />
+            <p>
+              &emsp; &emsp; &emsp;<span>ip 172.17.16.10</span> &emsp; &emsp;
+              &emsp;&emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;
+              &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+              &emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp;
+              &emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp;
+              &emsp;&emsp;&emsp;
+              <span> 运行时间 527天 18小时 3分 25秒 </span>
+            </p>
+            <hr border="1" />
+            <p>
+              &emsp; &emsp; &emsp;<span>提示:</span>
+
+              <span
+                ><b style="color: red"
+                  >亲，还在吗？您已监控5分钟，为避免资源浪费如需继续监控，请刷新该页面</b
+                >
+              </span>
+            </p>
+          </div>
+          <div class="appjs">
+            <div class="kqon1">
+              <h2 style="padding-top: 10px; margin-left: 20px">CPU使用率</h2>
+              <hr border="1" />
+              <div id="CpuEcharts"></div>
+              <h2 style="text-align: center;margin-top: -100px;">1.6 GiB/1.8 GiB</h2>
+            </div>
+            <div id="ic">
+              <h2 style="padding-top: 10px; margin-left: 20px">
+                CPU使用率趋势
+              </h2>
+              <hr border="1" />
+              <div id="main4"></div>
+            </div>
+          </div>
+          <div class="appjs">
+            <div class="kqon1">
+              <h2 style="padding-top: 10px; margin-left: 20px">内存使用率</h2>
+              <hr border="1" />
+              <div id="main10"></div>
+              <h2 style="text-align: center; margin-top: -111px;">1核CPU</h2>
+            </div>
+            <div id="ick">
+              <h2 style="padding-top: 10px; margin-left: 20px">
+                内存使用率趋势
+              </h2>
+              <hr border="1" />
+              <div id="main4s"></div>
+            </div>
+          </div>
+          <div class="appjs">
+            <div class="kqon2"  >
+              <h2 style="padding-top: 10px; margin-left: 20px">磁盘总使用率</h2>
+              <hr border="1" />
+              <div id="CpuE"></div>
+              <h2 style="text-align: center; margin-top: -111px;">12.4 GiB/49.1 GiB</h2>
+            </div>
+            <div id="iddc">
+              <h2 style="padding-top: 10px; margin-left: 20px">磁盘详情</h2>
+              <hr border="1" />
+              <div>
+                <ul>
+                  <li>文件系统名称</li>
+                  <li>挂载点或盘符</li>
+                  <li>文件系统类型</li>
+                  <li>磁盘分区总量</li>
+                  <li>磁盘分区可用</li>
+                  <li>磁盘分区已用</li>
+                  <li>分区使用比例</li>
+                </ul>
+                <ul>
+                  <li style="padding-left: 87px; padding-top: 30px">/</li>
+                  <li style="padding-left: 87px; padding-top: 30px">/</li>
+                  <li style="padding-left: 133px; padding-top: 30px">ext4</li>
+                  <li style="padding-left: 93px; padding-top: 30px">
+                    49.1 GiB
+                  </li>
+                  <li style="padding-left: 63px; padding-top: 30px">
+                    36.7 GiB
+                  </li>
+                  <li style="padding-left: 65px; padding-top: 30px">
+                    12.4 GiB
+                  </li>
+                  <li style="padding-left: 87px; padding-top: 30px">25.25%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(function () {
+          render();
+          funop();
+          fun1();
+          mkdo();
+          funhjk();
+          fun2();
+          $("tbody").click(tbodyFun);
+          $("#btnT").click(btnTFun);
+          $("#son").click(souFun);
+        });
+        $("#kkop").click(function () {
+          localStorage.removeItem("username");
+          localStorage.removeItem("password");
+          window.location.href = "./登入.html";
+        });
+        var stuArr = [
+          {
+            id: 1,
+            name: "张三",
+            age: 15366666666,
+            xiang: "2225776621@qq.com",
+          },
+          {
+            id: 2,
+            name: "李四",
+            age: 15311111111,
+            xiang: "user22@163.com",
+          },
+          {
+            id: 3,
+            name: "小美",
+            age: 15366666666,
+
+            xiang: "user4@163.com",
+          },
+        ];
+        function funyu() {
+          sop.style.display = "none";
+        }
+        function render(arr = stuArr) {
+          var strHTML = "";
+          $(arr).each((index, item) => {
+            strHTML += `<tr class='oppk'>
+              <td>${item.id}</td>
+              <td ><div data-id='${index}' class='opkl'style="color: red; " >></div></td>
+              <td>${item.name}</td>
+             <td>${item.age}</td>
+             <td>${item.xiang}</td>
+             <td><button class='buttonps'  style="color:'red";>禁用</button></td>
+             <td>${getDate(item.updated_at)}</td>
+         <td>
+           <button 	class="layui-btn layui-btn-radius layui-btn-danger" dataIndex='${index}'>删除</button>
+          <button class="layui-btn layui-btn-radius" title='${index}'>修改</button>
+          <button class="layui-btn layui-btn-radius layui-btn-normal" kan='${index}'>详情</button><br>
+
+          </td>
+          </tr>
+          `;
+          });
+          $("tbody").html(strHTML);
+        }
+
+        $("tbody").on("click", "button", function (e) {
+          if (e.target.innerHTML == "禁用") {
+            let res = {
+              "background-color": "red",
+              border: "1px solid red",
+              color: "#fff",
+            };
+            $(this).css(res);
+            $(this).html("已禁用");
+          }
+        });
+
+        function getDate() {
+          let updated_a = new Date();
+          return (
+            updated_a.getFullYear() +
+            "-" +
+            (updated_a.getMonth() + 1) +
+            "-" +
+            updated_a.getDate() +
+            " " +
+            updated_a.getHours() +
+            ":" +
+            updated_a.getMinutes() +
+            ":" +
+            updated_a.getSeconds()
+          );
+        }
+
+        $("tbody").on("click", 'input[name="shou"]', function () {
+          var n = 0;
+          $("td input[name='shou']").each(function () {
+            if ($(this).prop("checked") == false) {
+              n++;
+            }
+          });
+          if (n == 0) {
+            $("#shou").prop("checked", true);
+          } else {
+            $("#shou").prop("checked", false);
+          }
+        });
+
+        var usindex = null;
+        var fa = true;
+        function btnTFun() {
+          if (fa) {
+            var obj = {
+              id: stuArr.length + 1,
+              name: $("#sex").val(),
+              age: $("#sexs").val(),
+              xiang: $("#sexss").val(),
+            };
+            stuArr.push(obj);
+          } else {
+            stuArr[usindex] = {
+              id: stuArr.length + 1,
+              name: $("#sex").val(),
+              age: $("#sexs").val(),
+              xiang: $("#sexss").val(),
+            };
+            fa = true;
+            $("#btnT").html("添加");
+          }
+          render();
+          sex.value = "";
+          sexs.value = "";
+          sexss.value=""
+        }
+
+        function tbodyFun(e) {
+          if (e.target.innerHTML == "删除") {
+            if (confirm("确定删除吗")) {
+              let index = e.target.getAttribute("dataIndex");
+              stuArr.splice(index, 1);
+              render();
+            }
+          }
+          if (e.target.innerHTML == "修改") {
+            usindex = e.target.title;
+            var inp = $("sex").val();
+            sex.value = stuArr[usindex].name;
+            sexs.value = stuArr[usindex].age;
+            sexss.value = stuArr[usindex].xiang;
+            fa = false;
+            $("#btnT").html("确认修改");
+          }
+          if (e.target.innerHTML == "详情") {
+            sop.style.display = "block";
+            unindex = event.target.getAttribute("kan");
+            urame.value = stuArr[unindex].name;
+            igs.value = stuArr[unindex].age;
+            ssss.value = stuArr[unindex].xiang;
+            klop.value = getDate();
+
+            render();
+          }
+        }
+        function souFun() {
+          let arr = $(stuArr).filter((index, item) => {
+            return item.name.includes($("#op").val());
+          });
+          render(arr);
+        }
+
+        $("tbody").on("click", "div", function (e) {
+          var kong = event.target.dataset.id;
+
+          let html = `
+     <tr>
+    <td style="width: 220px
+                ;">角色 :&emsp;<button class="layui-btn layui-btn-sm" >管理员角色</button></td>
+    <td style="width: 160px">部门 :&emsp;<button class="layui-btn layui-btn-sm" >集团</button></td>
+    <td style="width: 220px
+                ;">备注 :&emsp;[&emsp;${stuArr[kong].name}&emsp;]&emsp;软件部经理</td>
+    
+ 
+
+
+     </tr>
+     `;
+          if (e.target.innerHTML == "&gt;") {
+            $(this).parent().parent().after(html);
+
+            $(this).html("^");
+          } else $(this).parent().parent().next().remove(), $(this).html(">");
+        });
+        render();
+
+        $(".sou").click(function () {
+          $("#div2").css("display", "none");
+          $("#div1").css("display", "block");
+          $("#div3").css("display", "none");
+        });
+        $(".lie").click(function () {
+          $("#div2").css("display", "block");
+          $("#div1").css("display", "none");
+          $("#div3").css("display", "none");
+        });
+
+        $(".le").click(function () {
+          $("#div2").css("display", "none");
+          $("#div1").css("display", "none");
+          $("#div3").css("display", "block");
+        });
+
+        function funop() {
+          $("#main1").css("display", "none");
+          $("#main2").css("display", "none");
+          $("#main6").css("display", "block");
+          var chartDom = document.getElementById("main6");
+          var myChart = echarts.init(chartDom);
+          var option;
+
+          option = {
+            title: {
+              text: "",
+            },
+            tooltip: {
+              trigger: "axis",
+            },
+            legend: {
+              data: [" 本周", "上周"],
+            },
+            grid: {
+              left: "3%",
+              right: "4%",
+              bottom: "3%",
+              containLabel: true,
+            },
+            toolbox: {
+              feature: {
+                saveAsImage: {},
+              },
+            },
+            xAxis: {
+              type: "category",
+              boundaryGap: false,
+              data: [
+                "星期五",
+                "星期六",
+                "星期天",
+                "星期一",
+                "星期二",
+                "星期三",
+                "今天",
+              ],
+            },
+            yAxis: {
+              type: "value",
+            },
+
+            series: [
+              {
+                name: " 本周",
+                type: "line",
+                stack: "Total",
+                data: [10, 32, 21, 54, 19, 60, 70],
+              },
+
+              {
+                name: "上周",
+                type: "line",
+                stack: "Total",
+                data: [40, 42, 51, 64, 69, 70, 70],
+              },
+            ],
+          };
+
+          option && myChart.setOption(option);
+        }
+
+        function funos() {
+          $("#main6").css("display", "none");
+          $("#main2").css("display", "none");
+          $("#main1").css("display", "block");
+          var chartDom = document.getElementById("main1");
+          var myChart = echarts.init(chartDom);
+          var option;
+
+          option = {
+            title: {
+              text: "",
+            },
+            tooltip: {
+              trigger: "axis",
+            },
+            legend: {
+              data: [" 本周", "上周"],
+            },
+            grid: {
+              left: "3%",
+              right: "4%",
+              bottom: "3%",
+              containLabel: true,
+            },
+            toolbox: {
+              feature: {
+                saveAsImage: {},
+              },
+            },
+            xAxis: {
+              type: "category",
+              boundaryGap: false,
+              data: [
+                "星期五",
+                "星期六",
+                "星期天",
+                "星期一",
+                "星期二",
+                "星期三",
+                "今天",
+              ],
+            },
+            yAxis: {
+              type: "value",
+            },
+
+            series: [
+              {
+                name: " 本周",
+                type: "line",
+                stack: "Total",
+                data: [210, 332, 521, 854, 189, 680, 790],
+              },
+
+              {
+                name: "上周",
+                type: "line",
+                stack: "Total",
+                data: [100, 142, 251, 464, 869, 170, 170],
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+
+        function funoz() {
+          $("#main1").css("display", "none");
+          $("#main6").css("display", "none");
+          $("#main2").css("display", "block");
+          var chartDom = document.getElementById("main2");
+          var myChart = echarts.init(chartDom);
+          var option;
+
+          option = {
+            title: {
+              text: "",
+            },
+            tooltip: {
+              trigger: "axis",
+            },
+            legend: {
+              data: [" 本周", "上周"],
+            },
+            grid: {
+              left: "3%",
+              right: "4%",
+              bottom: "3%",
+              containLabel: true,
+            },
+            toolbox: {
+              feature: {
+                saveAsImage: {},
+              },
+            },
+            xAxis: {
+              type: "category",
+              boundaryGap: false,
+              data: [
+                "星期五",
+                "星期六",
+                "星期天",
+                "星期一",
+                "星期二",
+                "星期三",
+                "今天",
+              ],
+            },
+            yAxis: {
+              type: "value",
+            },
+
+            series: [
+              {
+                name: " 本周",
+                type: "line",
+                stack: "Total",
+                data: [101, 32, 212, 544, 19, 606, 790],
+              },
+
+              {
+                name: "上周",
+                type: "line",
+                stack: "Total",
+                data: [40, 42, 51, 64, 69, 70, 1070],
+              },
+            ],
+          };
+
+          option && myChart.setOption(option);
+        }
+
+        let da = [
+          {
+            value: 1,
+          },
+        ];
+        setInterval(() => {
+          da[0].value++;
+          fun1();
+        }, 1000);
+        function fun1() {
+
+          var myChart = echarts.init(document.getElementById('CpuEcharts'), 'purple-passion');
+
+var item = {
+    name: "CPU  ",
+    value: random(),
+    unit: '%',
+    max: 100
+};
+option = {
+    title: {
+        text: item.value + item.unit,
+        x: '50%',
+        y: '40%',
+        textAlign: "center",
+        textStyle: {
+            fontSize: 60,
+            color: '#40c9c6'
+        },
+        subtext: item.name,
+        subtextStyle: {
+            fontSize: 40,
+            color: '#40c9c6',
+            align: 'center'
+        }
+    },
+    series: [{
+        name: ' ',
+        type: 'pie',
+        radius: ['60%', '80%'],
+        startAngle: 225,
+        color: [{
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0.4,
+            y2: 1,
+            colorStops: [{
+                offset: 0,
+                color: "#00a2ff" // 0% 处的颜色
+            }, {
+                offset: 1,
+                color: "#70ffac" // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        }, 'none'],
+        hoverAnimation: false,
+        legendHoverLink: false,
+        z: 10,
+        labelLine: {
+            normal: {
+                show: false
+            }
+        },
+        data: [{
+            value: 75 * item.value / 100
+        }, {
+            value: item.max - (75 * item.value / 100)
+        }]
+    }, {
+        name: '',
+        type: 'pie',
+        radius: ['60%', '80%'],
+        startAngle: 225,
+        color: ["#172228"],
+        z: 9,
+        hoverAnimation: false,
+        legendHoverLink: false,
+        labelLine: {
+            normal: {
+                show: false
+            }
+        },
+        data: [{
+            value: 75,
+            itemStyle: {
+                normal: {
+                    color: "#fff"
+                }
+            }
+        }, {
+            value: 25
+        }]
+    }],
+};
+
+function random() {
+    return (Math.random() * 100).toFixed(2);
+}
+
+option.timeTicket = setInterval(function () {
+    var value = parseInt(Math.random() * 100);
+    setPercent(value);
+}, 1000);
+
+function setPercent(p) {
+    var value = random(),
+        value_ = 75 * value / 100;
+    option.title.text = value + "%";
+    option.series[0].data[0].value = value_;
+    option.series[0].data[1].value = 100 - value_;
+    myChart.setOption(option, true);
+}
+
+myChart.setOption(option);
+        }
+
+        setInterval(() => {
+          da[0].value++;
+          mkdo();
+        }, 1000);
+        function mkdo() {
+          var chartDom = document.getElementById("main10");
+          var myChart = echarts.init(chartDom);
+          var option;
+
+          option = {
+            series: [
+              {
+                type: "gauge",
+                progress: {
+                  show: false,
+                  width: 8,
+                },
+                axisLine: {
+                  lineStyle: {
+                    width: 12,
+                  },
+                },
+                axisTick: {
+                  show: false,
+                },
+                splitLine: {
+                  show: false,
+                  length: 10,
+                  lineStyle: {
+                    width: 2,
+                    color: "000",
+                  },
+                },
+                axisLabel: {
+                  show: false,
+                  distance: 25,
+                  color: "orange",
+                  fontSize: 20,
+                },
+                pointer: {
+                  show: false,
+                },
+                anchor: {
+                  show: false,
+                  showAbove: true,
+                  size: 25,
+                  itemStyle: {
+                    borderWidth: 10,
+                  },
+                },
+                title: {
+                  show: false,
+                },
+                detail: {
+                  valueAnimation: true,
+                  fontSize: 80,
+                  offsetCenter: [0, "0%"],
+                },
+                data: da,
+              },
+            ],
+          };
+
+          option && myChart.setOption(option);
+        }
+
+        function funhjk() {
+          const colors = ["purple", "pink"];
+          var chartDom = document.getElementById("main4s");
+          var myChart = echarts.init(chartDom);
+          var option;
+          option = {
+            color: colors,
+            tooltip: {
+              trigger: "none",
+              axisPointer: {
+                type: "none",
+              },
+            },
+            legend: {},
+            grid: {
+              top: 70,
+              bottom: 20,
+            },
+            xAxis: [
+              {
+                type: "category",
+                axisTick: {
+                  alignWithLabel: true,
+                },
+                axisLine: {
+                  onZero: false,
+                  lineStyle: {
+                    color: colors[0],
+                  },
+                },
+                axisPointer: {
+              type: 'none'
+            }, // prettier-ignore
+                data: [
+                  "星期一",
+                  "星期二",
+                  "星期三",
+                  "星期四",
+                  "星期五",
+                  "星期六",
+                  "星期日",
+                ],
+              },
+              {
+                type: "category",
+                axisTick: {
+                  show: false,
+                  alignWithLabel: true,
+                },
+                axisLine: {
+                  show: false,
+                  onZero: false,
+                  lineStyle: {
+                    color: colors[1],
+                  },
+                },
+                axisLabel: {
+                  show: false, // 不显示坐标轴上的文字
+                },
+                axisPointer: {
+                  label: {
+                    formatter: function (params) {
+                      return (
+                        "Precipitation " +
+                        params.value +
+                        (params.seriesData.length
+                          ? "：" + params.seriesData[0].data
+                          : "")
+                      );
+                    },
+                  },
+                },
+              },
+            ],
+            yAxis: [
+              {
+                // type: 'value',
+
+                axisLabel: {
+                  show: true,
+                  textStyle: {
+                    color: colors[1],
+                  },
+                },
+              },
+            ],
+            series: [
+              {
+                smooth: true,
+                areaStyle: {
+                  normal: {
+                    color: new echarts.graphic.LinearGradient(
+                      0,
+                      0,
+                      0,
+                      1,
+                      [
+                        {
+                          offset: 0,
+                          color: "#F7F6F7",
+                        },
+                        {
+                          offset: 1,
+                          color: "rgba(126,171,233,0)",
+                        },
+                      ],
+                      false
+                    ),
+                    shadowColor: "rgba(44,118,222, 0.8)",
+                    shadowBlur: 20,
+                  },
+                },
+                name: "",
+                type: "line",
+                xAxisIndex: 1,
+                smooth: true,
+                emphasis: {
+                  focus: "series",
+                },
+                data: [40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40],
+              }, 
+            ],
+          };
+
+          option && myChart.setOption(option);
+        }
+        var app = {};
+        var chartDom = document.getElementById("main4");
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        const categories = (function () {
+          let now = new Date();
+          let res = [];
+          let len = 10;
+          while (len--) {
+            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ""));
+            now = new Date(+now - 2000);
+          }
+          return res;
+        })();
+        const categories2 = (function () {
+          let res = [];
+          let len = 10;
+          while (len--) {
+            res.push(10 - len - 1);
+          }
+          return res;
+        })();
+
+        const data2 = (function () {
+          let res = [];
+          let len = 0;
+          while (len < 10) {
+            res.push(+(Math.random() * 10 + 5).toFixed(1));
+            len++;
+          }
+          return res;
+        })();
+        option = {
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              type: "cross",
+              label: {
+                backgroundColor: "red",
+              },
+            },
+          },
+          legend: {},
+
+          dataZoom: {
+            show: false,
+            start: 0,
+            end: 100,
+          },
+          xAxis: [
+            {
+              type: "category",
+              boundaryGap: true,
+              data: categories2,
+            },
+          ],
+          yAxis: [
+            {
+              type: "value",
+              scale: true,
+              name: "Price",
+              max: 30,
+              min: 0,
+              boundaryGap: [0.2, 0.2],
+            },
+          ],
+          series: [
+            {
+              name: "Dynamic Line",
+              type: "line",
+              data: data2,
+            },
+          ],
+        };
+        app.count = 11;
+        setInterval(function () {
+          let axisData = new Date().toLocaleTimeString().replace(/^\D*/, "");
+
+          data2.shift();
+          data2.push(+(Math.random() * 10 + 5).toFixed(1));
+          categories.shift();
+          categories.push(axisData);
+          categories2.shift();
+          categories2.push(app.count++);
+          myChart.setOption({
+            xAxis: [
+              {
+                data: categories2,
+              },
+            ],
+            series: [
+              {
+                data: data2,
+              },
+            ],
+          });
+        }, 500);
+
+        option && myChart.setOption(option);
+
+        function fun2() {
+          var chartDom = document.getElementById("CpuE");
+          var myChart = echarts.init(chartDom);
+          var option;
+
+          option = {
+            series: [
+              {
+                type: "gauge",
+                progress: {
+                  show: false,
+                  width: 18,
+                },
+                axisLine: {
+                  lineStyle: {
+                    width: 18,
+                  },
+                },
+                axisTick: {
+                  show: false,
+                },
+                splitLine: {
+                  show: false,
+                  length: 15,
+                  lineStyle: {
+                    width: 2,
+                    color: "#000",
+                  },
+                },
+                axisLabel: {
+                  show: false,
+                  distance: 25,
+                  color: "#000",
+                  fontSize: 20,
+                },
+                pointer: {
+                  show: false,
+                },
+                anchor: {
+                  show: false,
+                  showAbove: true,
+                  size: 25,
+                  itemStyle: {
+                    borderWidth: 10,
+                  },
+                },
+                title: {
+                  show: false,
+                },
+                detail: {
+                  valueAnimation: true,
+                  fontSize: 80,
+                  offsetCenter: [0, "0%"],
+                },
+                data: [
+                  {
+                    value: 8.8,
+                  },
+                ],
+              },
+            ],
+          };
+          option && myChart.setOption(option);
+        }
+      </script>
+    </div>
+  </body>
+</html>
